@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import PreviewPage from '../../pages/PREVIEW_PAGE';
 
-const App = () => (
-  <div>
-    <h1>Hello World!</h1>
-  </div>
-);
+class App extends PureComponent {
+  componentDidMount() {
+    const { initApplication } = this.props;
+
+    initApplication();
+  }
+
+  render() {
+    const { app } = this.props;
+
+    if (app.isLoading) return (
+      <PreviewPage />
+    );
+
+    if (app.error) return (
+      <p>{app.error}</p>
+    );
+
+    return (
+      <div>
+        <h1>Hello World!</h1>
+      </div>
+    );
+  }
+};
 
 export default App;

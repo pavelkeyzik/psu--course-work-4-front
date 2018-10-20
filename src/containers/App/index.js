@@ -1,4 +1,15 @@
 import { connect } from 'react-redux';
 import App from '../../components/App';
+import {
+  initApplication,
+} from '../../actions/app';
 
-export default connect(null, null)(App);
+const mapStateToProps = (state) => ({
+  app: state.app,
+});
+
+const mapDispatchToProps = {
+  initApplication: initApplication,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
