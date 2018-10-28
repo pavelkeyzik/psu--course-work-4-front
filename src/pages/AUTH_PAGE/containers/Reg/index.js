@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import {
-  signIn,
+  signUp,
 } from '../../actions/';
-import Auth from '../../components/Auth';
+import Reg from '../../components/Reg';
 
 const mapStateToProps = (state) => ({
   user: state.user.data,
 });
 
 const mapDispatchToProps = {
-  signIn,
+  signUp,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+export default connect(mapStateToProps, mapDispatchToProps)(Reg);

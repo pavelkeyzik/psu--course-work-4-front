@@ -1,15 +1,30 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
+import {
+  Grid,
+} from 'semantic-ui-react';
 import Auth from './containers/Auth';
+import Reg from './containers/Reg';
+import constant from '../../shared/constants';
+import './index.scss';
 
-class AuthPage extends PureComponent {
-  render() {
-    return (
-      <div>
-        <h1>Authorization page</h1>
-        <Auth />
-      </div>
-    );
-  }
-}
+const AuthPage = () => {
+  const [type, setType] = useState(constant.AUTH);
+
+  function handleChangeType() {
+    setType(type === constant.AUTH ? constant.REG : constant.AUTH);
+  };
+
+  return (
+    <div className="auth-page">
+      <Grid>
+        <Grid.Column>
+          {type === constant.AUTH
+            ? <Auth onChangeType={handleChangeType} />
+            : <Reg onChangeType={handleChangeType} />}
+        </Grid.Column>
+      </Grid>
+    </div>
+  );
+};
 
 export default AuthPage;

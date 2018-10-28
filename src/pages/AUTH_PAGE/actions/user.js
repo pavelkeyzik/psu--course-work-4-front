@@ -26,6 +26,21 @@ const signIn = () => async (dispatch) => {
   }
 };
 
+const signUp = () => async (dispatch) => {
+  dispatch(userLoadRequested());
+  
+  try {
+    setTimeout(() => {
+      const token = 'GENERATED_TOKEN';
+      dispatch(userLoadSuccessful(token));
+    }, 1500);
+  } catch (error) {
+    console.error(error);
+    dispatch(userLoadError(message.en.SOMETHING_WENT_WRONG));
+  }
+};
+
 export {
   signIn,
+  signUp,
 }
