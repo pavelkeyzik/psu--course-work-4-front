@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import app from './app';
-import user from '../pages/AUTH_PAGE/reducers';
+import user from './user';
 
 const reducers = combineReducers({
-  app,
-  user,
+  data: user,
 });
 
 export default reducers;

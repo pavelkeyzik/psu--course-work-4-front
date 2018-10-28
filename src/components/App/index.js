@@ -1,5 +1,10 @@
 import React, { PureComponent } from 'react';
-import PreviewPage from '../../pages/PREVIEW_PAGE';
+import { Route } from 'react-router';
+import {
+  PreviewPage,
+  HomePage,
+  AuthPage,
+} from '../../pages';
 
 class App extends PureComponent {
   componentDidMount() {
@@ -9,7 +14,7 @@ class App extends PureComponent {
   }
 
   render() {
-    const { app } = this.props;
+    const { app, user: { data } } = this.props;
 
     if (app.isLoading) return (
       <PreviewPage />
@@ -19,10 +24,16 @@ class App extends PureComponent {
       <p>{app.error}</p>
     );
 
+    if (!data || !data.token) return (
+      <>
+        <Route exact path="/" component={AuthPage}/>
+      </>
+    );
+
     return (
-      <div>
-        <h1>Hello World!</h1>
-      </div>
+      <>
+        <Route exact path="/" component={HomePage}/>
+      </>
     );
   }
 };

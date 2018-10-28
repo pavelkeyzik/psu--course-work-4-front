@@ -6,6 +6,7 @@ import {
 
 const mapStateToProps = (state) => ({
   app: state.app,
+  user: state.user,
 });
 
 const mapDispatchToProps = {

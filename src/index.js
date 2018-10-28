@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import './index.scss';
 import AppContainer from './containers/App';
 import { Provider } from 'react-redux';
@@ -14,6 +15,8 @@ const store = createStore(reducers, composeEnhancers(
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppContainer />
+    <Router>
+      <AppContainer />
+    </Router>
   </Provider>
 , document.getElementById('root'));
