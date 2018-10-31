@@ -1,7 +1,14 @@
 import React from 'react';
+import {
+  Container,
+} from 'semantic-ui-react';
+import {
+  NavigationMenu,
+} from './components';
 
 export default () => (
-  <div>
+  <Container>
+    <NavigationMenu />
     <p>HOME PAGE</p>
-  </div>
+  </Container>
 );
