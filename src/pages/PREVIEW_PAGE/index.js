@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import {
   InterestingFact,
-} from './components';
+} from './containers';
 import './index.scss';
 
 class PreviewPage extends PureComponent {

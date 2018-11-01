@@ -14,11 +14,11 @@ const {
 
 const initApplication = () => async (dispatch) => {
   dispatch(appLoadRequested());
-  
+
   try {
     setTimeout(() => {
       dispatch(appLoadSuccessful());
-    }, 1500);
+    }, 3000);
   } catch (error) {
     console.error(error);
     dispatch(appLoadError(message.en.SOMETHING_WENT_WRONG));
