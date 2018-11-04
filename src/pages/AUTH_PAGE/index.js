@@ -1,26 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Grid,
 } from 'semantic-ui-react';
 import Auth from './containers/Auth';
 import Reg from './containers/Reg';
-import constant from '../../shared/constants';
 import './index.scss';
+import { Switch, Route, Redirect } from 'react-router';
 
 const AuthPage = () => {
-  const [type, setType] = useState(constant.AUTH);
-
-  function handleChangeType() {
-    setType(type === constant.AUTH ? constant.REG : constant.AUTH);
-  };
-
   return (
     <div className="auth-page">
       <Grid>
         <Grid.Column>
-          {type === constant.AUTH
-            ? <Auth onChangeType={handleChangeType} />
-            : <Reg onChangeType={handleChangeType} />}
+          <Switch>
+            <Route path="/login" component={Auth}/>
+            <Route path="/registration" component={Reg}/>
+            <Redirect to="/login"></Redirect>
+          </Switch>
         </Grid.Column>
       </Grid>
     </div>

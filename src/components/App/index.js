@@ -1,10 +1,17 @@
 import React, { PureComponent } from 'react';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import {
+  Container,
+} from 'semantic-ui-react';
 import {
   PreviewPage,
   HomePage,
   AuthPage,
+  FinesPage,
 } from '../../pages';
+import { NavigationMenu } from '..';
 
 class App extends PureComponent {
   componentDidMount() {
@@ -25,15 +32,22 @@ class App extends PureComponent {
     );
 
     if (!data || !data.token) return (
-      <>
-        <Route exact path="/" component={AuthPage}/>
-      </>
+      <Router>
+        <AuthPage />
+      </Router>
     );
 
     return (
-      <>
-        <Route exact path="/" component={HomePage}/>
-      </>
+      <Router>
+        <Container>
+          <NavigationMenu />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/fines" component={FinesPage} />
+            <Redirect to="/" />
+          </Switch>
+        </Container>
+      </Router>
     );
   }
 };

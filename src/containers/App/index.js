@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import App from '../../components/App';
+import { App } from '../../components';
 import {
   initApplication,
 } from '../../actions/app';
