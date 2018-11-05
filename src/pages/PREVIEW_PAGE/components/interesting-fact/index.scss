@@ -1,0 +1,26 @@
+@import '../../../../shared/styles/variables';
+
+.fact {
+  display: flex;
+  max-width: 600px;
+
+  &__text {
+    text-align: center;
+    padding: 10px 20px;
+    animation: textOpacity 2s infinite;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+}
+
+@keyframes textOpacity {
+  from {
+    color: lighten($color: $dark-gray, $amount: 20);
+  }
+  60% {
+    color: lighten($color: $dark-gray, $amount: 50);
+  }
+  to {
+    color: lighten($color: $dark-gray, $amount: 20);
+  }
+}
