@@ -6,7 +6,7 @@ import {
 } from 'semantic-ui-react';
 import messages from '../../shared/messages';
 
-export default () => {
+export default ({ onLogout }) => {
   return (
     <Menu secondary>
       <Menu.Item
@@ -33,6 +33,7 @@ export default () => {
         <Menu.Item
           name={messages.en.LOGOUT}
           value="logout"
+          onClick={onLogout}
         />
       </Menu.Menu>
     </Menu>

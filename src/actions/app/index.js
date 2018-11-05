@@ -1,6 +1,9 @@
 import { createActions } from 'redux-actions';
 import actionType from '../action-types';
 import message from '../../shared/messages';
+import {
+  checkUserToken,
+} from '../../pages/AUTH_PAGE/actions';
 
 const {
   appLoadRequested,
@@ -16,6 +19,7 @@ const initApplication = () => async (dispatch) => {
   dispatch(appLoadRequested());
 
   try {
+    dispatch(checkUserToken());
     setTimeout(() => {
       dispatch(appLoadSuccessful());
     }, 3000);

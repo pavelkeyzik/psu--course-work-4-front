@@ -3,6 +3,9 @@ import { App } from '../../components';
 import {
   initApplication,
 } from '../../actions/app';
+import {
+  logout,
+} from '../../pages/AUTH_PAGE/actions';
 
 const mapStateToProps = (state) => ({
   app: state.app,
@@ -10,7 +13,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  initApplication: initApplication,
+  initApplication,
+  logout,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -20,6 +20,11 @@ class App extends PureComponent {
     initApplication();
   }
 
+  handleLogout = () => {
+    const { logout } = this.props;
+    logout();
+  }
+
   render() {
     const { app, user: { data } } = this.props;
 
@@ -40,7 +45,7 @@ class App extends PureComponent {
     return (
       <Router>
         <Container>
-          <NavigationMenu />
+          <NavigationMenu onLogout={this.handleLogout}/>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/fines" component={FinesPage} />
