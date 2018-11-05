@@ -5,6 +5,7 @@ import {
 } from 'semantic-ui-react';
 import {
   messages,
+  routes,
 } from '../../../../shared';
 import { Link } from 'react-router-dom';
 
@@ -19,6 +20,6 @@ export default ({
     <Form.Input type="password" label={messages.en.ENTER_PASSWORD} required/>
     <Form.Input type="password" label={messages.en.REPEAT_PASSWORD} required/>
     <Button onClick={signUp} primary>{messages.en.SIGN_UP}</Button>
-    <Link to="/authorization">{ messages.en.SIGN_IN }</Link>
+    <Link to={routes.LOGIN}>{ messages.en.SIGN_IN }</Link>
   </Form>
 );

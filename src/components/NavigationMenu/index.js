@@ -4,7 +4,7 @@ import {
   Menu,
   Input,
 } from 'semantic-ui-react';
-import messages from '../../shared/messages';
+import { messages, routes } from '../../shared';
 
 export default ({ onLogout }) => {
   return (
@@ -12,19 +12,18 @@ export default ({ onLogout }) => {
       <Menu.Item
         exact
         as={Link}
-        to="/"
+        to={routes.HOME}
         name={messages.en.DASHBOARD}
       />
       <Menu.Item
         as={Link}
-        to="/fines"
+        to={routes.FINES}
         name={messages.en.FINES}
       />
       <Menu.Item
         as={Link}
-        to="/owners"
+        to={routes.OWNERS}
         name={messages.en.OWNERS}
-        value="owners"
       />
       <Menu.Menu position='right'>
         <Menu.Item>

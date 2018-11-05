@@ -11,7 +11,8 @@ import {
   AuthPage,
   FinesPage,
 } from '../../pages';
-import { NavigationMenu } from '..';
+import { NavigationMenu } from '../';
+import { routes } from '../../shared';
 
 class App extends PureComponent {
   componentDidMount() {
@@ -47,9 +48,9 @@ class App extends PureComponent {
         <Container>
           <NavigationMenu onLogout={this.handleLogout}/>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/fines" component={FinesPage} />
-            <Redirect to="/" />
+            <Route exact path={routes.HOME} component={HomePage} />
+            <Route path={routes.FINES} component={FinesPage} />
+            <Redirect to={routes.HOME} />
           </Switch>
         </Container>
       </Router>
