@@ -1,4 +1,4 @@
-const API = 'https://randomapi.com/api/fgknfdgt?key=WZZX-T16R-PDM3-GJWW';
+const API = 'https://virtserver.swaggerhub.com/pavelkeyzik/course/1.0.0';
 
 export {
   API,

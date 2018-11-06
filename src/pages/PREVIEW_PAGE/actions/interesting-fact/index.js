@@ -17,9 +17,9 @@ const loadFact = () => async (dispatch) => {
   dispatch(interestingFactLoadRequested());
 
   try {
-    const response = await fetch(API);
+    const response = await fetch(`${API}/interesting-fact`);
     const responseData = await response.json();
-    const data = responseData.results[0].interestingFact;
+    const data = responseData.fact;
 
     dispatch(interestingFactLoadSuccessful(data));
   } catch (error) {
