@@ -2,6 +2,10 @@ import React from 'react';
 import {
   Feed,
 } from 'semantic-ui-react';
+import moment from 'moment';
+import {
+  format,
+} from '../../../../../shared';
 
 export default ({ data }) => (
   <Feed>
@@ -9,7 +13,7 @@ export default ({ data }) => (
       <Feed.Event key={item.id}>
         <Feed.Label image={item.person.avatar} />
         <Feed.Content>
-          <Feed.Date content={item.date} />
+          <Feed.Date content={moment(item.date).format(format.DATETIME)} />
           <Feed.Summary>{item.description}</Feed.Summary>
         </Feed.Content>
       </Feed.Event>
