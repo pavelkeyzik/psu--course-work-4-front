@@ -1,7 +1,10 @@
 import React from 'react';
+import { FinesList } from './components';
 
 const FinesPage = () => (
-  <p>Fines Page</p>
+  <main>
+    <FinesList />
+  </main>
 );
 
 export default FinesPage;

@@ -1,3 +1,5 @@
+import fines from './fines';
+
 const messages = {
   en: {
     SOMETHING_WENT_WRONG: 'Something went wrong',
@@ -12,6 +14,7 @@ const messages = {
     DASHBOARD: 'Dashboard',
     FINES: 'Fines',
     OWNERS: 'Owners',
+    fines: fines.en,
   },
   ru: {
     SOMETHING_WENT_WRONG: 'Что-то пошло не так',
@@ -26,6 +29,7 @@ const messages = {
     DASHBOARD: 'Панель',
     FINES: 'Штрафы',
     OWNERS: 'Владельцы',
+    fines: fines.ru,
   }
 };
 
